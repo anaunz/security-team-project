@@ -188,18 +188,11 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
-<<<<<<< HEAD
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'hello', 'name' => 'Say Hello', 'url' => 'vulnerabilities/hello/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'File Upload', 'url' => 'vulnerabilities/upload/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'Teletubbies Upload', 'url' => 'vulnerabilities/upload/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'oracle', 'name' => 'Oracle', 'url' => 'vulnerabilities/oracle/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'who', 'name' => 'Who ?', 'url' => 'vulnerabilities/who/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'comment', 'name' => 'Comment me', 'url' => 'vulnerabilities/comment/' );
-=======
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => 'Command Injection', 'url' => 'vulnerabilities/hello/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'Teletubbies Upload', 'url' => 'vulnerabilities/upload/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (Reflected)', 'url' => 'vulnerabilities/xss_r/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (Stored)', 'url' => 'vulnerabilities/xss_s/' );
->>>>>>> f6fc309c54da8e3707be6c6bbc9966c18af921db
 	}
 
 	$menuBlocks[ 'meta' ] = array();

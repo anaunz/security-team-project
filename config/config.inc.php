@@ -45,8 +45,3 @@ $_DVWA[ 'default_phpids_level' ] = 'disabled';
 $_DVWA[ 'default_phpids_verbose' ] = 'false';
 
 ?>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> f6fc309c54da8e3707be6c6bbc9966c18af921db
