@@ -188,11 +188,18 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
+<<<<<<< HEAD
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'hello', 'name' => 'Say Hello', 'url' => 'vulnerabilities/hello/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'File Upload', 'url' => 'vulnerabilities/upload/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'oracle', 'name' => 'Oracle', 'url' => 'vulnerabilities/oracle/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'who', 'name' => 'Who ?', 'url' => 'vulnerabilities/who/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'comment', 'name' => 'Comment me', 'url' => 'vulnerabilities/comment/' );
+=======
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => 'Command Injection', 'url' => 'vulnerabilities/hello/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'Teletubbies Upload', 'url' => 'vulnerabilities/upload/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (Reflected)', 'url' => 'vulnerabilities/xss_r/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (Stored)', 'url' => 'vulnerabilities/xss_s/' );
+>>>>>>> f6fc309c54da8e3707be6c6bbc9966c18af921db
 	}
 
 	$menuBlocks[ 'meta' ] = array();
@@ -233,7 +240,7 @@ function dvwaHtmlEcho( $pPage ) {
 	// -- END (security cookie)
 
 	$phpIdsHtml   = '<em>PHPIDS:</em> ' . ( dvwaPhpIdsIsEnabled() ? 'enabled' : 'disabled' );
-	$userInfoHtml = '<em>Username:</em> ' . ( dvwaCurrentUser() );
+	$userInfoHtml = '<em>Username:</em>:' . ( dvwaCurrentUser() );
 
 	$messagesHtml = messagesPopAllToHtml();
 	if( $messagesHtml ) {
@@ -242,7 +249,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 	$systemInfoHtml = "";
 	if( dvwaIsLoggedIn() )
-		$systemInfoHtml = "<div align=\"left\">{$userInfoHtml}<br /><em>Security Level:</em> Superchok<br />{$phpIdsHtml}</div>";
+		$systemInfoHtml = "<div align=\"left\"><img src=\"".DVWA_WEB_PAGE_TO_ROOT."dvwa/images/sun-baby.png\" height=\"190\" width=\"190\"><br><br>{$userInfoHtml}<br /><em>Security Level:</em> Superchok<br />{$phpIdsHtml}</div>";
 	if( $pPage[ 'source_button' ] ) {
 		$systemInfoHtml = dvwaButtonSourceHtmlGet( $pPage[ 'source_button' ] ) . " $systemInfoHtml";
 	}

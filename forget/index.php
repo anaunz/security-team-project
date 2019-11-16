@@ -1,6 +1,6 @@
 <?php
 
-define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
+define( 'DVWA_WEB_PAGE_TO_ROOT', '../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
 $page = dvwaPageNewGrab();
@@ -14,7 +14,7 @@ dvwaDatabaseConnect();
 $method            = 'GET';
 $vulnerabilityFile = 'low.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/sqli/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "forget/source/{$vulnerabilityFile}";
 
 // Is PHP function magic_quotee enabled?
 $WarningHtml = '';
