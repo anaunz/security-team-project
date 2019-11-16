@@ -103,7 +103,7 @@ echo "
 			<p class=\"submit\"><input type=\"submit\" value=\"Login\" name=\"Login\"></p>
 
 			<br>
-			<a href=\"" . DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/sqli\">Forget username password?</a>
+			<a href=\"" . DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/sqli\">Forget your name?</a>
 
 	</fieldset>
 

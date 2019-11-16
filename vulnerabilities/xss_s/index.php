@@ -17,7 +17,7 @@ if (array_key_exists ("btnClear", $_POST)) {
 	$query  = "TRUNCATE guestbook;";
 	$result = mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '</pre>' );
 }
-$vulnerabilityFile = 'low.php';
+$vulnerabilityFile = 'impossible.php';
 
 require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/xss_s/source/{$vulnerabilityFile}";
 
@@ -57,13 +57,9 @@ $page[ 'body' ] .= "
 	" . dvwaGuestbook() . "
 	<br />
 
-	<h2>More Information</h2>
+	<h2>Hint</h2>
 	<ul>
 		<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/Cross-site_scripting' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.cgisecurity.com/xss-faq.html' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.scriptalert1.com/' ) . "</li>
 	</ul>
 </div>\n";
 

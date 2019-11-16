@@ -130,7 +130,7 @@ div#system_info {
 
 div#main_body {
 	float: right;
-	width: 100%;
+	width: 700px;
 	background: #f4f4f4;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -145,7 +145,7 @@ div.body_padded {
 div#main_menu {
 	float: left;
 	text-align: center;
-	width: 100%;
+	width: 200px;
 	background-color: #f4f4f4;
 	padding-top: 10px;
 	padding-bottom: 10px;

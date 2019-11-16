@@ -1,16 +1,10 @@
-<style>
-div#main_menu {
-	display:None;
-}
-</style>
-
 <?php
 
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Forget Username or Password' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'title' ]   = 'Forget Your Name' . $page[ 'title_separator' ].$page[ 'title' ];
 $page[ 'page_id' ] = 'sqli';
 $page[ 'help_button' ]   = 'sqli';
 $page[ 'source_button' ] = 'sqli';
@@ -33,9 +27,8 @@ if( ini_get( 'safe_mode' ) == true ) {
 }
 
 $page[ 'body' ] .= "
-&nbsp&nbsp<a href=\"".DVWA_WEB_PAGE_TO_ROOT."\"> << Home </a> <br><br><br>
 <div class=\"body_padded\">
-	<h1>Querying Username and Password</h1>
+	<h1>Querying Name and Surname</h1>
 
 	{$WarningHtml}
 	<center>
@@ -43,7 +36,7 @@ $page[ 'body' ] .= "
 	$page[ 'body' ] .= "
 		<form action=\"#\" method=\"{$method}\">
 			<p>
-				Secret Code:";
+				User ID:";
 	$page[ 'body' ] .= "\n				<input type=\"text\" size=\"50\" name=\"id\">";
 
 	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Query\">

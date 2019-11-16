@@ -182,6 +182,9 @@ function dvwaHtmlEcho( $pPage ) {
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'home' ][] = array( 'id' => 'home', 'name' => 'Home', 'url' => '.' );
 	}
+	else {
+		$menuBlocks[ 'home' ][] = array( 'id' => 'home', 'name' => 'Back to Login', 'url' => '.' );
+	}
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
