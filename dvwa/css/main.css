@@ -130,7 +130,7 @@ div#system_info {
 
 div#main_body {
 	float: right;
-	width: 693px;
+	width: 100%;
 	background: #f4f4f4;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -144,8 +144,8 @@ div.body_padded {
 
 div#main_menu {
 	float: left;
-	width: 200px;
-	height: 100%;
+	text-align: center;
+	width: 100%;
 	background-color: #f4f4f4;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -172,7 +172,7 @@ div#main_menu li.selected {
 }
 
 div#main_menu li.selected a {
-	color: #F9F7ED;
+	color: #000000;
 }
 
 div#main_menu li: hover {
@@ -180,7 +180,7 @@ div#main_menu li: hover {
 }
 
 div#main_menu li: hover a {
-	color: #F9F7ED;
+	color: #000000;
 }
 
 div#main_menu_padded {

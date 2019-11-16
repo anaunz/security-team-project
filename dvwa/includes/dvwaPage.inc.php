@@ -138,12 +138,7 @@ function dvwaSecurityLevelGet() {
 
 
 function dvwaSecurityLevelSet( $pSecurityLevel ) {
-	if( $pSecurityLevel == 'impossible' ) {
-		$httponly = true;
-	}
-	else {
-		$httponly = false;
-	}
+	$httponly = false;
 	setcookie( session_name(), session_id(), null, '/', null, null, $httponly );
 	setcookie( 'security', $pSecurityLevel, NULL, NULL, NULL, NULL, $httponly );
 }
@@ -187,16 +182,11 @@ function dvwaHtmlEcho( $pPage ) {
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'home' ][] = array( 'id' => 'home', 'name' => 'Home', 'url' => '.' );
 	}
-	else {
-		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => 'Setup DVWA', 'url' => 'setup.php' );
-		$menuBlocks[ 'home' ][] = array( 'id' => 'instructions', 'name' => 'Instructions', 'url' => 'instructions.php' );
-	}
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => 'Command Injection', 'url' => 'vulnerabilities/exec/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'File Upload', 'url' => 'vulnerabilities/upload/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli', 'name' => 'SQL Injection', 'url' => 'vulnerabilities/sqli/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (Reflected)', 'url' => 'vulnerabilities/xss_r/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (Stored)', 'url' => 'vulnerabilities/xss_s/' );
 	}
@@ -313,8 +303,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 			<div id=\"footer\">
 
-				<p>Damn Vulnerable Web Application (DVWA) v" . dvwaVersionGet() . "</p>
-				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "/dvwa/js/add_event_listeners.js'></script>
+				<p>CPE382: Computer Security - Team Project</p>
 
 			</div>
 
