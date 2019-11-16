@@ -195,8 +195,6 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'comment', 'name' => 'Comment me', 'url' => 'features/comment/' );
 	}
 
-	$menuBlocks[ 'meta' ] = array();
-
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'logout' ] = array();
 		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => 'Logout', 'url' => 'logout.php' );
@@ -242,13 +240,9 @@ function dvwaHtmlEcho( $pPage ) {
 
 	$systemInfoHtml = "";
 	if( dvwaIsLoggedIn() )
-		$systemInfoHtml = "<div align=\"left\"><img src=\"".DVWA_WEB_PAGE_TO_ROOT."dvwa/images/sun-baby.png\" height=\"190\" width=\"190\"><br><br>{$userInfoHtml}<br /><em>Security Level:</em> Po-ssible<br />{$phpIdsHtml}</div>";
-	if( $pPage[ 'source_button' ] ) {
-		$systemInfoHtml = dvwaButtonSourceHtmlGet( $pPage[ 'source_button' ] ) . " $systemInfoHtml";
-	}
-	if( $pPage[ 'help_button' ] ) {
-		$systemInfoHtml = dvwaButtonHelpHtmlGet( $pPage[ 'help_button' ] ) . " $systemInfoHtml";
-	}
+		$menuHtml .= "<br><hr><br><div align=\"left\"><img src=\"".DVWA_WEB_PAGE_TO_ROOT."dvwa/images/sun-baby.png\" height=\"170\" width=\"170\"><br><br>{$userInfoHtml}<br /><em>Security Level:</em> Po-ssible<br /></div>";
+	else
+		$menuHtml .= "<br><hr><br><div align=\"left\"><img src=\"".DVWA_WEB_PAGE_TO_ROOT."dvwa/images/bad_sun.jpg\" height=\"170\" width=\"170\"><br><br><em>༼ つ ◕_◕ ༽つ</em><br>Login Needed<em>༼ つ ◕_◕ ༽つ</em><br /></div>";
 
 	// Send Headers + main HTML code
 	Header( 'Cache-Control: no-cache, must-revalidate');   // HTTP/1.1
@@ -306,7 +300,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 			<div id=\"footer\">
 				<p>Are u done ?</p>
-				<br /><br />
+				<small id='white'>Not powered by Oracle</small>
 			</div>
 
 		</div>
@@ -478,3 +472,9 @@ $MYSQL_SERVER     = 'MySQL host: <em>' . $_DVWA[ 'db_server' ] . '</em>';
 // -- END (Setup Functions)
 
 ?>
+
+<style>
+#white {
+color: #fff8f8;
+}
+</style>

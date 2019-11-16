@@ -1,32 +1,18 @@
 <?php
 
 if( isset( $_POST[ 'Submit' ]  ) ) {
-	// Get input
-	$target = $_REQUEST[ 'txt' ];
-
-	$cs = array('ghostbusters','hellokitty','vader');
-
-	// Set blacklist
-	$substitutions = array(
-		'&&' => '',
-		';'  => '',
-	);
-
-	// Remove any of the charactars in the array (blacklist).
-	$target = str_replace( array_keys( $substitutions ), $substitutions, $target );
-	$cow = $cs[array_rand($cs)];
-	// Determine OS and execute the ping command.
-	if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
-		// Windows
+	$rand_advice = ["<pre>Oracle predicts that<br><br>Flag is somewhere inside configuration</pre>",
+			"<pre>Oracle suggests that<br><br>'cat' might be a command you need</pre>",
+			"<pre>Oracle can see that<br><br>Comment section is<br>&nbsp&nbsp&nbsp&nbsp&nbspUSELESS</pre>",
+			"<pre>Oracle is telling you that there are only four useful advices including this</pre>"];
+	$rand_num = rand(0, 10);
+	if ($rand_num > 3) {
 		$cmd = shell_exec( 'fortune -s');
+		$html .= "<pre>{$cmd}</pre>";
 	}
 	else {
-		// *nix
-		$cmd = shell_exec( 'fortune -s' );
+		$html .= $rand_advice[$rand_num];
 	}
-
-	// Feedback for the end user
-	$html .= "<pre>{$cmd}</pre>";
 }
 
 ?>

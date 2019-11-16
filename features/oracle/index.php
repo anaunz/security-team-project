@@ -16,19 +16,15 @@ require_once DVWA_WEB_PAGE_TO_ROOT . "features/oracle/source/{$vulnerabilityFile
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>I am the oracle !</h1>
-
+	<h1>I am the <img src=\"".DVWA_WEB_PAGE_TO_ROOT."dvwa/images/oracle.png\" height='30'> !!!</h1>
+	
 	<div class=\"vulnerable_code_area\">
 		<h2>I know everything!</h2>
 
 		<form name=\"ping\" action=\"#\" method=\"post\">
 			<p>
-				<input type=\"submit\" name=\"Submit\" value=\"Click\">
+				<input type=\"submit\" name=\"Submit\" value=\"Listen to me\">
 			</p>\n";
-
-if( $vulnerabilityFile == 'impossible.php' )
-	$page[ 'body' ] .= "			" . tokenField();
-
 $page[ 'body' ] .= "
 		</form>
 		{$html}

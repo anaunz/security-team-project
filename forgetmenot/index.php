@@ -28,7 +28,7 @@ if( ini_get( 'safe_mode' ) == true ) {
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Querying Name and Surname</h1>
+	<h1>Forget your name, huh, ḟḀṁ ṠqṳḀḊ?</h1>
 
 	{$WarningHtml}
 	<center>
@@ -39,7 +39,7 @@ $page[ 'body' ] .= "
 				User ID:";
 	$page[ 'body' ] .= "\n				<input type=\"text\" size=\"50\" name=\"id\">";
 
-	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Query\">
+	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Search\">
 			</p>\n";
 
 	if( $vulnerabilityFile == 'impossible.php' )
@@ -52,7 +52,8 @@ $page[ 'body' ] .= "
 	
 	</div>
 	</center>
-	<h2>Hint</h2>
+	<br><br>
+	<h3>Oracle hints that</h3>
 	<ul>
 		<li>Querying from database</li>
 	</ul>
