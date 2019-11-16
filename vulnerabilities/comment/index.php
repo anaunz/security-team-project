@@ -6,10 +6,8 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Vulnerability: Stored Cross Site Scripting (XSS)' . $page[ 'title_separator' ].$page[ 'title' ];
-$page[ 'page_id' ] = 'xss_s';
-$page[ 'help_button' ]   = 'xss_s';
-$page[ 'source_button' ] = 'xss_s';
+$page[ 'title' ]   = 'Comment pls' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'page_id' ] = 'comment';
 
 dvwaDatabaseConnect();
 
@@ -19,11 +17,11 @@ if (array_key_exists ("btnClear", $_POST)) {
 }
 $vulnerabilityFile = 'impossible.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/xss_s/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/comment/source/{$vulnerabilityFile}";
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Vulnerability: Stored Cross Site Scripting (XSS)</h1>
+	<h1>Comment here!</h1>
 
 	<div class=\"vulnerable_code_area\">
 		<form method=\"post\" name=\"guestform\" \">
@@ -33,14 +31,14 @@ $page[ 'body' ] .= "
 					<td><input name=\"txtName\" type=\"text\" size=\"30\" maxlength=\"10\"></td>
 				</tr>
 				<tr>
-					<td width=\"100\">Message *</td>
+					<td width=\"100\">Comment *</td>
 					<td><textarea name=\"mtxMessage\" cols=\"50\" rows=\"3\" maxlength=\"50\"></textarea></td>
 				</tr>
 				<tr>
 					<td width=\"100\">&nbsp;</td>
 					<td>
-						<input name=\"btnSign\" type=\"submit\" value=\"Sign Guestbook\" onclick=\"return validateGuestbookForm(this.form);\" />
-						<input name=\"btnClear\" type=\"submit\" value=\"Clear Guestbook\" onClick=\"return confirmClearGuestbook();\" />
+						<input name=\"btnSign\" type=\"submit\" value=\"Post\" onclick=\"return validateGuestbookForm(this.form);\" />
+						<input name=\"btnClear\" type=\"submit\" value=\"Clear\" onClick=\"return confirmClearGuestbook();\" />
 					</td>
 				</tr>
 			</table>\n";
@@ -58,9 +56,7 @@ $page[ 'body' ] .= "
 	<br />
 
 	<h2>Hint</h2>
-	<ul>
-		<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)' ) . "</li>
-	</ul>
+	
 </div>\n";
 
 dvwaHtmlEcho( $page );

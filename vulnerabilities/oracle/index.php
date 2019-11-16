@@ -6,28 +6,24 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Come To Say Hello' . $page[ 'title_separator' ].$page[ 'title' ];
-$page[ 'page_id' ] = 'exec';
-$page[ 'help_button' ]   = 'exec';
-$page[ 'source_button' ] = 'exec';
+$page[ 'title' ]   = 'Oracle' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'page_id' ] = 'oracle';
 
 dvwaDatabaseConnect();
 $vulnerabilityFile = 'medium.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/hello/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/oracle/source/{$vulnerabilityFile}";
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Come to say Hello</h1>
+	<h1>I am the oracle !</h1>
 
 	<div class=\"vulnerable_code_area\">
-		<h2>Hello!</h2>
+		<h2>I know everything!</h2>
 
 		<form name=\"ping\" action=\"#\" method=\"post\">
 			<p>
-				Say:
-				<input type=\"text\" name=\"txt\" size=\"30\">
-				<input type=\"submit\" name=\"Submit\" value=\"Send\">
+				<input type=\"submit\" name=\"Submit\" value=\"Click\">
 			</p>\n";
 
 if( $vulnerabilityFile == 'impossible.php' )
