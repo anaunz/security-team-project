@@ -146,10 +146,15 @@ div#main_menu {
 	float: left;
 	text-align: center;
 	width: 200px;
+<<<<<<< HEAD
 	height: 100%;
 	background-color: #f8f8ff;
 =======
 	background-color: #f4f4f4;
+>>>>>>> 71a57def72a2376a293532210ffedee862d66fb4
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 
 div#main_menu li {
 	border-width: 1px;
