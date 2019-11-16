@@ -17,8 +17,6 @@ $page[ 'body' ] .= "
 	<hr />
 	<br />
 
-
-	
 </div>";
 
 dvwaHtmlEcho( $page );

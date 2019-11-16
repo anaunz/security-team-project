@@ -138,12 +138,7 @@ function dvwaSecurityLevelGet() {
 
 
 function dvwaSecurityLevelSet( $pSecurityLevel ) {
-	if( $pSecurityLevel == 'impossible' ) {
-		$httponly = true;
-	}
-	else {
-		$httponly = false;
-	}
+	$httponly = false;
 	setcookie( session_name(), session_id(), null, '/', null, null, $httponly );
 	setcookie( 'security', $pSecurityLevel, NULL, NULL, NULL, NULL, $httponly );
 }
@@ -187,12 +182,14 @@ function dvwaHtmlEcho( $pPage ) {
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'home' ][] = array( 'id' => 'home', 'name' => 'Home', 'url' => '.' );
 	}
+	else {
+		$menuBlocks[ 'home' ][] = array( 'id' => 'home', 'name' => 'Back to Login', 'url' => '.' );
+	}
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => 'Command Injection', 'url' => 'vulnerabilities/exec/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'File Upload', 'url' => 'vulnerabilities/upload/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'sqli', 'name' => 'SQL Injection', 'url' => 'vulnerabilities/sqli/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (Reflected)', 'url' => 'vulnerabilities/xss_r/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (Stored)', 'url' => 'vulnerabilities/xss_s/' );
 	}
@@ -309,7 +306,6 @@ function dvwaHtmlEcho( $pPage ) {
 			<div id=\"footer\">
 				<p>Are u done ?</p>
 				<br /><br />
-					
 			</div>
 
 		</div>

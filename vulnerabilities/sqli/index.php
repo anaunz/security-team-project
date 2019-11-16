@@ -4,7 +4,7 @@ define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Vulnerability: SQL Injection' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'title' ]   = 'Forget Your Name' . $page[ 'title_separator' ].$page[ 'title' ];
 $page[ 'page_id' ] = 'sqli';
 $page[ 'help_button' ]   = 'sqli';
 $page[ 'source_button' ] = 'sqli';
@@ -28,29 +28,18 @@ if( ini_get( 'safe_mode' ) == true ) {
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Vulnerability: SQL Injection</h1>
+	<h1>Querying Name and Surname</h1>
 
 	{$WarningHtml}
-
+	<center>
 	<div class=\"vulnerable_code_area\">";
-if( $vulnerabilityFile == 'high.php' ) {
-	$page[ 'body' ] .= "Click <a href=\"#\" onclick=\"javascript:popUp('session-input.php');return false;\">here to change your ID</a>.";
-}
-else {
 	$page[ 'body' ] .= "
 		<form action=\"#\" method=\"{$method}\">
 			<p>
 				User ID:";
-	if( $vulnerabilityFile == 'medium.php' ) {
-		$page[ 'body' ] .= "\n				<select name=\"id\">";
+	$page[ 'body' ] .= "\n				<input type=\"text\" size=\"50\" name=\"id\">";
 
-		for( $i = 1; $i < $number_of_rows + 1 ; $i++ ) { $page[ 'body' ] .= "<option value=\"{$i}\">{$i}</option>"; }
-		$page[ 'body' ] .= "</select>";
-	}
-	else
-		$page[ 'body' ] .= "\n				<input type=\"text\" size=\"15\" name=\"id\">";
-
-	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Submit\">
+	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Query\">
 			</p>\n";
 
 	if( $vulnerabilityFile == 'impossible.php' )
@@ -58,22 +47,18 @@ else {
 
 	$page[ 'body' ] .= "
 		</form>";
-}
 $page[ 'body' ] .= "
 		{$html}
+	
 	</div>
-
-	<h2>More Information</h2>
+	</center>
+	<h2>Hint</h2>
 	<ul>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.securiteam.com/securityreviews/5DP0N1P76E.html' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/SQL_injection' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://ferruh.mavituna.com/sql-injection-cheatsheet-oku/' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/SQL_Injection' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://bobby-tables.com/' ) . "</li>
+		<li>Query from database</li>
 	</ul>
 </div>\n";
 
 dvwaHtmlEcho( $page );
 
 ?>
+
