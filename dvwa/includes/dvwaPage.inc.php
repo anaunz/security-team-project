@@ -188,11 +188,11 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'hello', 'name' => 'Say Hello', 'url' => 'vulnerabilities/hello/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'Teletubbies Upload', 'url' => 'vulnerabilities/upload/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'oracle', 'name' => 'Oracle', 'url' => 'vulnerabilities/oracle/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'who', 'name' => 'Who ?', 'url' => 'vulnerabilities/who/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'comment', 'name' => 'Comment me', 'url' => 'vulnerabilities/comment/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'hello', 'name' => 'Say Hello', 'url' => 'features/hello/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'Teletubbies Upload', 'url' => 'features/upload/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'oracle', 'name' => 'Oracle', 'url' => 'features/oracle/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'who', 'name' => 'Who ?', 'url' => 'features/who/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'comment', 'name' => 'Comment me', 'url' => 'features/comment/' );
 	}
 
 	$menuBlocks[ 'meta' ] = array();
@@ -242,7 +242,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 	$systemInfoHtml = "";
 	if( dvwaIsLoggedIn() )
-		$systemInfoHtml = "<div align=\"left\"><img src=\"".DVWA_WEB_PAGE_TO_ROOT."dvwa/images/sun-baby.png\" height=\"190\" width=\"190\"><br><br>{$userInfoHtml}<br /><em>Security Level:</em> Superchok<br />{$phpIdsHtml}</div>";
+		$systemInfoHtml = "<div align=\"left\"><img src=\"".DVWA_WEB_PAGE_TO_ROOT."dvwa/images/sun-baby.png\" height=\"190\" width=\"190\"><br><br>{$userInfoHtml}<br /><em>Security Level:</em> Po-ssible<br />{$phpIdsHtml}</div>";
 	if( $pPage[ 'source_button' ] ) {
 		$systemInfoHtml = dvwaButtonSourceHtmlGet( $pPage[ 'source_button' ] ) . " $systemInfoHtml";
 	}
@@ -449,7 +449,7 @@ function tokenField() {  # Return a field for the (CSRF) token
 
 
 // Setup Functions --
-$PHPUploadPath    = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "hackable" . DIRECTORY_SEPARATOR . "uploads" ) . DIRECTORY_SEPARATOR;
+$PHPUploadPath    = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "areU" . DIRECTORY_SEPARATOR . "teletubbies" ) . DIRECTORY_SEPARATOR;
 $PHPIDSPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "external" . DIRECTORY_SEPARATOR . "phpids" . DIRECTORY_SEPARATOR . dvwaPhpIdsVersionGet() . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "IDS" . DIRECTORY_SEPARATOR . "tmp" . DIRECTORY_SEPARATOR . "phpids_log.txt" );
 $PHPCONFIGPath       = realpath( getcwd() . DIRECTORY_SEPARATOR . DVWA_WEB_PAGE_TO_ROOT . "config");
 

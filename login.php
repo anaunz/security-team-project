@@ -103,7 +103,7 @@ echo "
 			<p class=\"submit\"><input type=\"submit\" value=\"Login\" name=\"Login\"></p>
 
 			<br>
-			<a href=\"" . DVWA_WEB_PAGE_TO_ROOT . "forget\">Forget your name, Po?</a>
+			<a href=\"" . DVWA_WEB_PAGE_TO_ROOT . "forgetmenot\">Forget your name, Po?</a>
 
 	</fieldset>
 

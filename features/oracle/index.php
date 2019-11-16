@@ -12,7 +12,7 @@ $page[ 'page_id' ] = 'oracle';
 dvwaDatabaseConnect();
 $vulnerabilityFile = 'medium.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/oracle/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "features/oracle/source/{$vulnerabilityFile}";
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">

@@ -6,7 +6,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Vulnerability: File Upload' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'title' ]   = 'Teletubbies Upload' . $page[ 'title_separator' ].$page[ 'title' ];
 $page[ 'page_id' ] = 'upload';
 $page[ 'help_button' ]   = 'upload';
 $page[ 'source_button' ] = 'upload';
@@ -14,7 +14,7 @@ $page[ 'source_button' ] = 'upload';
 dvwaDatabaseConnect();
 $vulnerabilityFile = 'medium.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/upload/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "features/upload/source/{$vulnerabilityFile}";
 
 // Check if folder is writeable
 $WarningHtml = '';

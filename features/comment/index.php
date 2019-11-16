@@ -17,7 +17,7 @@ if (array_key_exists ("btnClear", $_POST)) {
 }
 $vulnerabilityFile = 'impossible.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/comment/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "features/comment/source/{$vulnerabilityFile}";
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
@@ -28,7 +28,14 @@ $page[ 'body' ] .= "
 			<table width=\"550\" border=\"0\" cellpadding=\"2\" cellspacing=\"1\">
 				<tr>
 					<td width=\"100\">Name *</td>
-					<td><input name=\"txtName\" type=\"text\" size=\"30\" maxlength=\"10\"></td>
+					<td>
+						<select name=\"txtName\">
+						  <option value=\"Tinky Winky\">Tinky Winky</option>
+						  <option value=\"Dipsy\">Dipsy</option>
+						  <option value=\"Laa-Laa\">Laa-Laa</option>
+						  <option value=\"Po\" selected>Po</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td width=\"100\">Comment *</td>
@@ -38,7 +45,7 @@ $page[ 'body' ] .= "
 					<td width=\"100\">&nbsp;</td>
 					<td>
 						<input name=\"btnSign\" type=\"submit\" value=\"Post\" onclick=\"return validateGuestbookForm(this.form);\" />
-						<input name=\"btnClear\" type=\"submit\" value=\"Clear\" onClick=\"return confirmClearGuestbook();\" />
+						<!-- <input name=\"btnClear\" type=\"submit\" value=\"Clear\" onClick=\"return confirmClearGuestbook();\" /> -->
 					</td>
 				</tr>
 			</table>\n";
@@ -53,9 +60,6 @@ $page[ 'body' ] .= "
 	<br />
 
 	" . dvwaGuestbook() . "
-	<br />
-
-	<h2>Hint</h2>
 	
 </div>\n";
 

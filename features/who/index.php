@@ -12,7 +12,7 @@ $page[ 'page_id' ] = 'who';
 dvwaDatabaseConnect();
 $vulnerabilityFile = 'low.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/who/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "features/who/source/{$vulnerabilityFile}";
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">

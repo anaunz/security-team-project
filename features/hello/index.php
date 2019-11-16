@@ -7,14 +7,14 @@ dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Come To Say Hello' . $page[ 'title_separator' ].$page[ 'title' ];
-$page[ 'page_id' ] = 'exec';
-$page[ 'help_button' ]   = 'exec';
-$page[ 'source_button' ] = 'exec';
+$page[ 'page_id' ] = 'hello';
+$page[ 'help_button' ]   = 'hello';
+$page[ 'source_button' ] = 'hello';
 
 dvwaDatabaseConnect();
 $vulnerabilityFile = 'medium.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/hello/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "features/hello/source/{$vulnerabilityFile}";
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">

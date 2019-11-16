@@ -14,7 +14,7 @@ dvwaDatabaseConnect();
 $method            = 'GET';
 $vulnerabilityFile = 'low.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "forget/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "forgetmenot/source/{$vulnerabilityFile}";
 
 // Is PHP function magic_quotee enabled?
 $WarningHtml = '';
@@ -54,7 +54,7 @@ $page[ 'body' ] .= "
 	</center>
 	<h2>Hint</h2>
 	<ul>
-		<li>Query from database</li>
+		<li>Querying from database</li>
 	</ul>
 </div>\n";
 
