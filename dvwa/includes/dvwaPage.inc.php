@@ -200,7 +200,10 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'logout' ][] = array( 'id' => 'logout', 'name' => 'Logout', 'url' => 'logout.php' );
 	}
 
-	$menuHtml = '';
+	$menuHtml = messagesPopAllToHtml();
+	if( $menuHtml ) {
+		$menuHtml = "<div class=\"menuBlocks\">{$menuHtml}</div><br><hr><br>";
+	}
 
 	foreach( $menuBlocks as $menuBlock ) {
 		$menuBlockHtml = '';
@@ -232,11 +235,6 @@ function dvwaHtmlEcho( $pPage ) {
 
 	$phpIdsHtml   = '<em>PHPIDS:</em> ' . ( dvwaPhpIdsIsEnabled() ? 'enabled' : 'disabled' );
 	$userInfoHtml = '<em>Username:</em>:' . ( dvwaCurrentUser() );
-
-	$messagesHtml = messagesPopAllToHtml();
-	if( $messagesHtml ) {
-		$messagesHtml = "<div class=\"body_padded\">{$messagesHtml}</div>";
-	}
 
 	$systemInfoHtml = "";
 	if( dvwaIsLoggedIn() )
