@@ -188,8 +188,8 @@ function dvwaHtmlEcho( $pPage ) {
 
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'vulnerabilities' ] = array();
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => 'Command Injection', 'url' => 'vulnerabilities/exec/' );
-		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'File Upload', 'url' => 'vulnerabilities/upload/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'exec', 'name' => 'Command Injection', 'url' => 'vulnerabilities/hello/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'upload', 'name' => 'Teletubbies Upload', 'url' => 'vulnerabilities/upload/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (Reflected)', 'url' => 'vulnerabilities/xss_r/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (Stored)', 'url' => 'vulnerabilities/xss_s/' );
 	}
@@ -232,7 +232,7 @@ function dvwaHtmlEcho( $pPage ) {
 	// -- END (security cookie)
 
 	$phpIdsHtml   = '<em>PHPIDS:</em> ' . ( dvwaPhpIdsIsEnabled() ? 'enabled' : 'disabled' );
-	$userInfoHtml = '<em>Username:</em> ' . ( dvwaCurrentUser() );
+	$userInfoHtml = '<em>Username:</em>:' . ( dvwaCurrentUser() );
 
 	$messagesHtml = messagesPopAllToHtml();
 	if( $messagesHtml ) {
@@ -241,7 +241,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 	$systemInfoHtml = "";
 	if( dvwaIsLoggedIn() )
-		$systemInfoHtml = "<div align=\"left\">{$userInfoHtml}<br /><em>Security Level:</em> Superchok<br />{$phpIdsHtml}</div>";
+		$systemInfoHtml = "<div align=\"left\"><img src=\"".DVWA_WEB_PAGE_TO_ROOT."dvwa/images/sun-baby.png\" height=\"190\" width=\"190\"><br><br>{$userInfoHtml}<br /><em>Security Level:</em> Superchok<br />{$phpIdsHtml}</div>";
 	if( $pPage[ 'source_button' ] ) {
 		$systemInfoHtml = dvwaButtonSourceHtmlGet( $pPage[ 'source_button' ] ) . " $systemInfoHtml";
 	}

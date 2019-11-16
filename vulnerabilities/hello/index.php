@@ -14,7 +14,7 @@ $page[ 'source_button' ] = 'exec';
 dvwaDatabaseConnect();
 $vulnerabilityFile = 'medium.php';
 
-require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/exec/source/{$vulnerabilityFile}";
+require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/hello/source/{$vulnerabilityFile}";
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
