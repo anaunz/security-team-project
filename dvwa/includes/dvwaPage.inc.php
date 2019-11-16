@@ -37,14 +37,14 @@ if( !isset( $_COOKIE[ 'security' ] ) || !in_array( $_COOKIE[ 'security' ], $secu
 		dvwaPhpIdsEnabledSet( false );
 }
 
-// DVWA version
+//version
 function dvwaVersionGet() {
-	return '1.10 *Development*';
+	return '4.0*';
 }
 
-// DVWA release date
+//release date
 function dvwaReleaseDateGet() {
-	return '2015-10-08';
+	return '2019-11-28';
 }
 
 
@@ -121,7 +121,7 @@ function dvwaCurrentUser() {
 
 function &dvwaPageNewGrab() {
 	$returnArray = array(
-		'title'           => 'Damn Vulnerable Web Application (DVWA) v' . dvwaVersionGet() . '',
+		'title'           => ' Where is the flag ?',
 		'title_separator' => ' :: ',
 		'body'            => '',
 		'page_id'         => '',
@@ -186,10 +186,6 @@ function dvwaHtmlEcho( $pPage ) {
 	$menuBlocks[ 'home' ] = array();
 	if( dvwaIsLoggedIn() ) {
 		$menuBlocks[ 'home' ][] = array( 'id' => 'home', 'name' => 'Home', 'url' => '.' );
-	}
-	else {
-		$menuBlocks[ 'home' ][] = array( 'id' => 'setup', 'name' => 'Setup DVWA', 'url' => 'setup.php' );
-		$menuBlocks[ 'home' ][] = array( 'id' => 'instructions', 'name' => 'Instructions', 'url' => 'instructions.php' );
 	}
 
 	if( dvwaIsLoggedIn() ) {
@@ -273,7 +269,6 @@ function dvwaHtmlEcho( $pPage ) {
 
 		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/main.css\" />
 
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
 
 		<script type=\"text/javascript\" src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/js/dvwaPage.js\"></script>
 
@@ -284,7 +279,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 			<div id=\"header\">
 
-				<img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/logo.png\" alt=\"Damn Vulnerable Web Application\" />
+				<img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/Teletubbies_Logo.png\" alt=\"Where is the flag ?\" />
 
 			</div>
 
@@ -312,10 +307,9 @@ function dvwaHtmlEcho( $pPage ) {
 			</div>
 
 			<div id=\"footer\">
-
-				<p>Damn Vulnerable Web Application (DVWA) v" . dvwaVersionGet() . "</p>
-				<script src='" . DVWA_WEB_PAGE_TO_ROOT . "/dvwa/js/add_event_listeners.js'></script>
-
+				<p>Are u done ?</p>
+				<br /><br />
+					
 			</div>
 
 		</div>
@@ -325,79 +319,6 @@ function dvwaHtmlEcho( $pPage ) {
 </html>";
 }
 
-
-function dvwaHelpHtmlEcho( $pPage ) {
-	// Send Headers
-	Header( 'Cache-Control: no-cache, must-revalidate');   // HTTP/1.1
-	Header( 'Content-Type: text/html;charset=utf-8' );     // TODO- proper XHTML headers...
-	Header( 'Expires: Tue, 23 Jun 2009 12:00:00 GMT' );    // Date in the past
-
-	echo "
-<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
-
-<html xmlns=\"http://www.w3.org/1999/xhtml\">
-
-	<head>
-
-		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
-
-		<title>{$pPage[ 'title' ]}</title>
-
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/help.css\" />
-
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
-
-	</head>
-
-	<body>
-
-	<div id=\"container\">
-
-			{$pPage[ 'body' ]}
-
-		</div>
-
-	</body>
-
-</html>";
-}
-
-
-function dvwaSourceHtmlEcho( $pPage ) {
-	// Send Headers
-	Header( 'Cache-Control: no-cache, must-revalidate');   // HTTP/1.1
-	Header( 'Content-Type: text/html;charset=utf-8' );     // TODO- proper XHTML headers...
-	Header( 'Expires: Tue, 23 Jun 2009 12:00:00 GMT' );    // Date in the past
-
-	echo "
-<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
-
-<html xmlns=\"http://www.w3.org/1999/xhtml\">
-
-	<head>
-
-		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
-
-		<title>{$pPage[ 'title' ]}</title>
-
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/source.css\" />
-
-		<link rel=\"icon\" type=\"\image/ico\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "favicon.ico\" />
-
-	</head>
-
-	<body>
-
-		<div id=\"container\">
-
-			{$pPage[ 'body' ]}
-
-		</div>
-
-	</body>
-
-</html>";
-}
 
 // To be used on all external links --
 function dvwaExternalLinkUrlGet( $pLink,$text=null ) {
