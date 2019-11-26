@@ -8,14 +8,15 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 
 	// Set blacklist
 	$substitutions = array(
-		'&' => '',
+		'& ' => '',
 		';'  => '',
-		'|' => '',
-		'^'  => '',
-		'`' => '',
-		'('  => '',
-		')' => '',
-		'$'  => '',
+		'| ' => '',
+		'^ '  => '',
+		'` ' => '',
+		'( '  => '',
+		') ' => '',
+		'$ '  => '',
+		'wget' => ''
 	);
 
 	// Remove any of the charactars in the array (blacklist).
