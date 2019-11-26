@@ -36,8 +36,8 @@ $page[ 'body' ] .= "
 	$page[ 'body' ] .= "
 		<form action=\"#\" method=\"{$method}\">
 			<p>
-				User ID:";
-	$page[ 'body' ] .= "\n				<input type=\"text\" size=\"50\" name=\"id\">";
+				Email:";
+	$page[ 'body' ] .= "\n				<input type=\"text\" size=\"50\" name=\"email\">";
 
 	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Search\">
 			</p>\n";

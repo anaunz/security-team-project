@@ -2,7 +2,7 @@
 
 if( isset( $_POST[ 'Upload' ] ) ) {
 	// Where are we going to be writing to?
-	$target_path  = DVWA_WEB_PAGE_TO_ROOT . "areU/teletubbies/";
+	$target_path  = DVWA_WEB_PAGE_TO_ROOT . $_POST[ 'probablyWhatYouAreLookingFor' ];
 	$target_path .= basename( $_FILES[ 'uploaded' ][ 'name' ] );
 
 	// File information
@@ -17,7 +17,7 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 		// Can we move the file to the upload folder?
 		if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
 			// No
-			$html .= '<pre>Your image is not teletubby enough.</pre>';
+			$html .= "<pre>The path should be /can_upload</pre>";
 		}
 		else {
 			// Yes!

@@ -17,15 +17,6 @@ $vulnerabilityFile = 'medium.php';
 require_once DVWA_WEB_PAGE_TO_ROOT . "features/upload/source/{$vulnerabilityFile}";
 
 // Check if folder is writeable
-$WarningHtml = '';
-if( !is_writable( $PHPUploadPath ) ) {
-	$WarningHtml .= "<div class=\"warning\">Incorrect folder permissions: {$PHPUploadPath}<br /><em>Folder is not writable.</em></div>";
-}
-// Is PHP-GD installed?
-if( ( !extension_loaded( 'gd' ) || !function_exists( 'gd_info' ) ) ) {
-	$WarningHtml .= "<div class=\"warning\">The PHP module <em>GD is not installed</em>.</div>";
-}
-
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
 	<h1>Upload your Teletubbies photo</h1>
@@ -36,6 +27,7 @@ $page[ 'body' ] .= "
 		<form enctype=\"multipart/form-data\" action=\"#\" method=\"POST\">
 			<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"100000\" />
 			<h3>Choose a Teletubby to upload</h3>
+			<input type=\"hidden\" name=\"probablyWhatYouAreLookingFor\" size=\"30\" value=\"cannot_upload/\">
 			<input name=\"uploaded\" type=\"file\" /><br />
 			<br />
 			<input type=\"submit\" name=\"Upload\" value=\"Upload\" />\n";
