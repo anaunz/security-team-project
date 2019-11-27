@@ -45,7 +45,7 @@ if( isset( $_POST[ 'Login' ] ) ) {
 	}
 
 	// Login failed
-	dvwaMessagePush( 'Login failed' );
+	dvwaMessagePush( "Login failed<br><a id=\"hide\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "forgetmenot\">Did you forget your paswsword again, Po?</a>" );
 	dvwaRedirect( 'login.php' );
 }
 
@@ -84,7 +84,6 @@ echo "
 	<p><img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/Teletubbies_Logo.png\" /></p>
 
 	<br />
-
 	</div> <!--<div id=\"header\">-->
 
 	<div id=\"content\">
@@ -102,9 +101,6 @@ echo "
 
 			<p class=\"submit\"><input type=\"submit\" value=\"Login\" name=\"Login\"></p>
 
-			<br>
-			<a href=\"" . DVWA_WEB_PAGE_TO_ROOT . "forgetmenot\">Forget your name, Po?</a>
-
 	</fieldset>
 
 	" . tokenField() . "
@@ -115,20 +111,15 @@ echo "
 
 	{$messagesHtml}
 
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-
 
 	</div > <!--<div id=\"content\">-->
+	</div>
 
 	</body>
 
 </html>";
 
 ?>
+<style>
+	#hide{color:white}
+</style>

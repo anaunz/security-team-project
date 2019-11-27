@@ -17,7 +17,7 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 		// Can we move the file to the upload folder?
 		if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
 			// No
-			$html .= "<pre>'{$target_path}' is not an uploadable path.<br>Teletubby God Alliance suggests that you need to change your path to /can_upload<pre>";
+			$html .= "<pre>'{$target_path}' is not an uploadable path.<br><br><br>Teletubby God Alliance suggests that<br>You may need to peek where to upload in 'Say Hello' page!<pre>";
 		}
 		else {
 			// Yes!
@@ -25,11 +25,11 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 		}
 	}
 	else if (strpos(strtolower($uploaded_name), 'teletubbies') !== false || strpos(strtolower($uploaded_name), 'teletubby') !== false) {
-		$html .= '<pre>Hej, you are a fake Teletubby.</pre>';
+		$html .= '<pre>Hej, you are faking a Teletubby file!</pre>';
 	}
 	else {
 		// Invalid file
-		$html .= '<pre>Your file is not <b>TELETUBBY</b> enough.</pre>';
+		$html .= '<pre>Your file is not <b>TELETUBBY</b> enough</pre>';
 	}
 }
 

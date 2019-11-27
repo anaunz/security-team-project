@@ -5,8 +5,11 @@ if( isset( $_POST[ 'btnSign' ] ) ) {
 	checkToken( $_REQUEST[ 'user_token' ], $_SESSION[ 'session_token' ], 'index.php' );
 
 	// Get input
-	$message = trim( $_POST[ 'mtxMessage' ] );
-	$name    = trim( $_POST[ 'txtName' ] );
+	$message = trim( "PO!" );
+	if($_POST[ 'txtName' ] === 'Po')
+		$name    = trim( $_POST[ 'txtName' ] );
+	else
+		$name    = trim( "*Po is pretending to be " . $_POST[ 'txtName' ] . "*" );
 
 	// Sanitize message input
 	$message = stripslashes( $message );

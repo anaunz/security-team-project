@@ -28,7 +28,7 @@ if( ini_get( 'safe_mode' ) == true ) {
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Forget your name, huh, ḟḀṁ ṠqṳḀḊ?</h1>
+	<h1>Forget password again, huh, ḟḀṁ ṠqṳḀḊ?</h1>
 
 	{$WarningHtml}
 	<center>

@@ -9,7 +9,7 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 	if(strpos($target, 'wget') !== false)
 		$target = 'Nice try, Teletubby! But you need to upload a teletubby file at the upload page.';
 	else if(strpos(strtolower($target), 'cat') !== false)
-		$html .= "<pre>Normally, I wouldn't allow this, but Teletubby God Alliance can see your effort!<br><br><br><b>Here is what you are looking for:</b><br><br>[F12] may require probably</pre>";
+		$target = "Nice try, Teletubby! But you need to open a file in the shell!";
 	else if(strpos(strtolower($target), '/can_upload/') !== false && strpos(strtolower($target), 'php') !== false)
 		$target = 'Nice try, Teletubby! But you need to run the teletubby file at the Who ? page.';
 

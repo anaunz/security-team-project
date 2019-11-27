@@ -35,9 +35,9 @@ label {
 }
 
 .loginInput {
-	float: left;
+	float: center;
 	color: #6B6B6B;
-	width: 320px;
+	width: 100%;
 	background-color: #F4F4F4;
 	border: 1px;
 	border-style: solid;

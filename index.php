@@ -16,11 +16,10 @@ $page[ 'body' ] .= "
 	<p>Flag: Find me , please ~~~</p>
 	<img src='dvwa/images/teletubbies.jpeg' height='380' width='650'>
 	<br>
-	<p><img src='dvwa/images/laa-laa.png' height='30' width='30'> Laa-Laa: Merry
-	<img src='dvwa/images/tinky-winky.png' height='30' width='30'> Tinky Winky: Christmas &
-	<img src='dvwa/images/dipsy.png' height='30' width='30'> Dipsy: Happy
-	<img src='dvwa/images/po.png' height='30' width='30'> Po: New Year</p>
-	<p id='hidden'>Seek for Oracle for some advices</p>
+	<p><img src='dvwa/images/laa-laa.png' height='30' width='30'> Laa-Laa: If you stuck
+	<img src='dvwa/images/tinky-winky.png' height='30' width='30'> Tinky Winky: Go to seek for 
+	<img src='dvwa/images/dipsy.png' height='30' width='30'> Dipsy: Oracle
+	<img src='dvwa/images/po.png' height='30' width='30'> Po: he may give some useful advices to you!</p>
 	</center>
 
 </div>";
@@ -28,9 +27,3 @@ $page[ 'body' ] .= "
 dvwaHtmlEcho( $page );
 
 ?>
-
-<style>
-#hidden {
-color: #fffff8;
-}
-</style>

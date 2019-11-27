@@ -1,11 +1,11 @@
 <?php
 
-$rand_advice = ["<pre>Oracle predicts that<br><br>Flag is somewhere inside /var/www/html/teletubby</pre>",
-		"<pre>Oracle suggests that<br><br>'cat' might be a command you need to open a file</pre>",
-		"<pre>Oracle can see that<br><br>Comment section is<br>&nbsp&nbsp&nbsp&nbsp&nbspUSELESS</pre>",
-		"<pre>Oracle is going to tell you that<br><br>Have you try a special character without spacing?</pre>",
-		"<pre>While closing his eyes, Oracle tells you that<br><br>The tag script may not be working</pre>",
-		"<pre>Oracle saw an upcoming usage of pphphphpp</pre>",];
+$rand_advice = ["<pre>Oracle predicts that<br><br>Flag is somewhere inside <b>/var/www/html/teletubby</b></pre>",
+		"<pre>Oracle suggests that<br><br><b>cat</b> might be a command you need to open a file</pre>",
+		"<pre>Oracle can see that<br><br>Comment section is<br><h1><b>USELESS</b></h1></pre>",
+		"<pre>Oracle is going to tell you that<br><br>Have you try a special character <b>WITHOUT SPACING</b> in 'Say Hello'?</pre>",
+		"<pre>While closing his eyes, Oracle tells you that<br><br>The tag <b>script</b> may not be working. Try something else</pre>",
+		"<pre>Oracle saw an upcoming usage of <b>pphphphpp</b></pre>",];
 
 if( isset( $_POST[ 'Submit' ]  ) ) {
 	
