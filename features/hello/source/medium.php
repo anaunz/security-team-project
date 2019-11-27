@@ -16,7 +16,8 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 		'( '  => '',
 		') ' => '',
 		'$ '  => '',
-		'wget' => ''
+		'wget' => '',
+		'cat' => ''
 	);
 
 	// Remove any of the charactars in the array (blacklist).

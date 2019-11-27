@@ -2,7 +2,7 @@
 
 echo "Nice try, Tubby. But it's not that easy.
 
-<img src=\"bad.jpeg\" height='300' width='500'>
+<img src=\"./bad.jpeg\" height='300' width='500'>
 
 
 <b>Here is some essay to read:</b>
