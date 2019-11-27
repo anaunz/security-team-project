@@ -2,6 +2,7 @@
 
 echo "Nice try, Tubby. But it's not that easy.
 
+This is the picture of Teletubby God Alliance. Be grateful!<br>
 <img src=\"./bad.jpeg\" height='300' width='500'>
 
 

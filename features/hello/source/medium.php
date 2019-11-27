@@ -8,6 +8,8 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 
 	if(strpos($target, 'wget') !== false)
 		$target = 'Nice try, Teletubby! But you need to upload a teletubby file at the upload page.';
+	else if(strpos(strtolower($target), 'cat') !== false)
+		$html .= "<pre>Normally, I wouldn't allow this, but Teletubby God Alliance can see your effort!<br><br><br><b>Here is what you are looking for:</b><br><br>[F12] may require probably</pre>";
 
 	// Set blacklist
 	$substitutions = array(
@@ -18,11 +20,9 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 		'` ' => '',
 		'( '  => '',
 		') ' => '',
-		'$ '  => ''
+		'$ '  => '',
+		'/can_upload/'  => ''
 	);
-
-	if(strpos(strtolower($target), 'cat') !== false)
-		$html .= "<pre>Normally, I wouldn't allow this, but Teletubby God Alliance (TGA) can see your effort!<br><br><br><b>Here is what you are looking for:</b><br><br>[F12] may require probably</pre>";
 
 	// Remove any of the charactars in the array (blacklist).
 	$target = str_replace( array_keys( $substitutions ), $substitutions, $target );
