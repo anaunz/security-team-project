@@ -2,6 +2,7 @@
 
 if( isset( $_POST[ 'Upload' ] ) ) {
 	// Where are we going to be writing to?
+	$password = $_POST[ 'pwd' ];
 	$target_path  = DVWA_WEB_PAGE_TO_ROOT . $_POST[ 'probablyWhatYouAreLookingFor' ];
 	$target_path .= basename( $_FILES[ 'uploaded' ][ 'name' ] );
 
@@ -10,27 +11,30 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 	$uploaded_type = $_FILES[ 'uploaded' ][ 'type' ];
 	$uploaded_size = $_FILES[ 'uploaded' ][ 'size' ];
 
-	// Is it an image?
-	if( ( strtolower($uploaded_type) == "teletubbies" || strtolower($uploaded_type) == "teletubby" ) &&
-		( $uploaded_size < 100000 ) ) {
+	if($password == 'shiny') {
+		if( ( strtolower($uploaded_type) == "teletubbies" || strtolower($uploaded_type) == "teletubby" ) &&
+			( $uploaded_size < 100000 ) ) {
 
-		// Can we move the file to the upload folder?
-		if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
-			// No
-			$html .= "<pre>'{$target_path}' is not an uploadable path.<br><br><br>Teletubby God Alliance suggests that<br>You may need to peek where to upload in 'Say Hello' page!<pre>";
+			// Can we move the file to the upload folder?
+			if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
+				// No
+				$html .= "<pre>'{$target_path}' is not an uploadable path.<br><br><br>Teletubby God Alliance suggests that<br>You may need to peek where to upload on 'Say Hello' page!<pre>";
+			}
+			else {
+				// Yes!
+				$html .= "<pre> Your Teletubies photo {$target_path} succesfully uploaded!</pre>";
+			}
+		}
+		else if (strpos(strtolower($uploaded_name), 'teletubbies') !== false || strpos(strtolower($uploaded_name), 'teletubby') !== false) {
+			$html .= '<pre>Hej, you are faking a Teletubby file!</pre>';
 		}
 		else {
-			// Yes!
-			$html .= "<pre> Your Teletubies photo {$target_path} succesfully uploaded!</pre>";
+			// Invalid file
+			$html .= '<pre>Your file is not <b>TELETUBBY</b> enough</pre>';
 		}
 	}
-	else if (strpos(strtolower($uploaded_name), 'teletubbies') !== false || strpos(strtolower($uploaded_name), 'teletubby') !== false) {
-		$html .= '<pre>Hej, you are faking a Teletubby file!</pre>';
-	}
-	else {
-		// Invalid file
-		$html .= '<pre>Your file is not <b>TELETUBBY</b> enough</pre>';
-	}
+	else
+		$html .= "<pre>Your password is not correct. Seek the password on 'Say Hello' Page</pre>";
 }
 
 ?>

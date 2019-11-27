@@ -8,10 +8,10 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 
 	if(strpos($target, 'wget') !== false)
 		$target = 'Nice try, Teletubby! But you need to upload a teletubby file at the upload page.';
-	else if(strpos(strtolower($target), 'cat') !== false)
-		$target = "Nice try, Teletubby! But you need to open a file in the shell!";
-	else if(strpos(strtolower($target), '/can_upload/') !== false && strpos(strtolower($target), 'php') !== false)
-		$target = 'Nice try, Teletubby! But you need to run the teletubby file at the Who ? page.';
+	else if(strpos(strtolower($target), 'cat') !== false && strpos(strtolower($target), '/tmp/flag') !== false)
+		$target = "Nice try, Teletubby! But you need to open the teletubby flag in the shell!";
+	else if(strpos(strtolower($target), 'php') !== false)
+		$target = str_replace( 'php', '', strtolower($target) );
 
 	// Set blacklist
 	$substitutions = array(

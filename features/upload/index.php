@@ -28,8 +28,8 @@ $page[ 'body' ] .= "
 			<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"100000\" />
 			<h3>Choose a Teletubby to upload</h3>
 			<input type=\"hidden\" name=\"probablyWhatYouAreLookingFor\" size=\"30\" value=\"cannot_upload/\">
-			<input name=\"uploaded\" type=\"file\" /><br />
-			<br />
+			<input name=\"uploaded\" type=\"file\" /><br /><br />
+			Password: <input type=\"password\" name=\"pwd\" size=\"10\"> &nbsp
 			<input type=\"submit\" name=\"Upload\" value=\"Upload\" />\n";
 
 $page[ 'body' ] .= "
