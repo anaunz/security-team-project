@@ -17,7 +17,7 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 		// Can we move the file to the upload folder?
 		if( !move_uploaded_file( $_FILES[ 'uploaded' ][ 'tmp_name' ], $target_path ) ) {
 			// No
-			$html .= "<pre>The path should be /can_upload</pre>";
+			$html .= "<pre>'{$target_path}' is not an uploadable path.<br>Why don't you peek in 'Say Hello' ?<pre>";
 		}
 		else {
 			// Yes!
